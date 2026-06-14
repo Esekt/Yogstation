@@ -4,7 +4,7 @@
 		UnregisterSignal(A, COMSIG_ATOM_EXAMINE); \
 	} while (0)
 
-GLOBAL_LIST_INIT(guardian_bomb_life, list(
+GLOBAL_LIST_INIT(guardian_bomb_life, alist(
 	1 = 15 SECONDS,
 	2 = 25 SECONDS,
 	3 = 40 SECONDS,
@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(guardian_bomb_life, list(
 	name = "Explosive"
 	desc = "The guardian can, with a single touch, turn any inanimate object into a bomb."
 	cost = 4
-	action_types = list(/datum/action/guardian/detonate_bomb)
+	action_types = alist(/datum/action/guardian/detonate_bomb)
 	var/bomb_cooldown = 0
 	var/list/bombs = list()
 	var/static/list/boom_signals = list(COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_BUMPED, COMSIG_ATOM_ATTACK_HAND)

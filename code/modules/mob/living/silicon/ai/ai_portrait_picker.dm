@@ -43,7 +43,7 @@
 		return
 	switch(action)
 		if("select")
-			var/list/tab2key = list(TAB_PUBLIC = "public")
+			var/list/tab2key = alist(TAB_PUBLIC = "public")
 			var/folder = tab2key[params["tab"]]
 			var/list/current_list = SSpersistent_paintings.paintings[folder]
 			var/list/chosen_portrait = current_list[params["selected"]]

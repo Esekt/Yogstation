@@ -101,7 +101,7 @@ GLOBAL_LIST_EMPTY(ooc_new_long_messages_very)
 	if(GLOB.ooc_new_long_messages_short[key] >= 3 && !GLOB.ooc_shadow_muted[key])
 		GLOB.ooc_shadow_muted[key] = TRUE
 		message_admins("Shadow muted [key] from OOC. Will reset when round ends.")
-
+/*
 	if(!GLOB.ooc_shadow_muted[key])
 		if(GLOB.ooc_new_last_messsage[key] > (world.time))
 			to_chat(src, span_warning("Please wait a [(GLOB.ooc_new_last_messsage[key] - world.time) / 10 ] seconds before sending another OOC message"))
@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(ooc_new_long_messages_very)
 
 	if(get_exp_living(TRUE) <= 300)
 		GLOB.ooc_new_last_messsage[key] = world.time + 5 SECONDS
-
+*/
 	mob.log_talk(raw_msg, LOG_OOC)
 	if(holder && holder.fakekey) //YOGS start - webhook support
 		webhook_send_ooc(holder.fakekey, msg)

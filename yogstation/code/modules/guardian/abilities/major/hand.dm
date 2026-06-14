@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(guardian_hand_cooldown, list(
+GLOBAL_LIST_INIT(guardian_hand_cooldown, alist(
 	1 = 10 SECONDS,
 	2 = 7.5 SECONDS,
 	3 = 5 SECONDS,

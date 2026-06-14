@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(all_huds)
 GLOBAL_LIST_EMPTY(huds_by_category)
 
 //GLOBAL HUD LIST
-GLOBAL_LIST_INIT(huds, list(
+GLOBAL_LIST_INIT(huds, alist(
 	DATA_HUD_SECURITY_BASIC = 		new /datum/atom_hud/data/human/security/basic(),
 	DATA_HUD_SECURITY_ADVANCED = 	new /datum/atom_hud/data/human/security/advanced(),
 	DATA_HUD_MEDICAL_BASIC = 		new /datum/atom_hud/data/human/medical/basic(),
@@ -24,29 +24,29 @@ GLOBAL_LIST_INIT(huds, list(
 	///associative list of the form: list(z level = list(hud atom)).
 	///tracks what hud atoms for this hud exists in what z level so we can only give users
 	///the hud images that they can actually see.
-	var/list/atom/hud_atoms = list()
+	var/list/atom/hud_atoms = alist()
 
 	///associative list of the form: list(z level = list(hud user client mobs)).
 	///tracks mobs that can "see" us
 	// by z level so when they change z's we can adjust what images they see from this hud.
-	var/list/hud_users = list()
+	var/list/hud_users = alist()
 
 	///used for signal tracking purposes, associative list of the form: list(hud atom = TRUE) that isnt separated by z level
-	var/list/atom/hud_atoms_all_z_levels = list()
+	var/list/atom/hud_atoms_all_z_levels = alist()
 
 	///used for signal tracking purposes, associative list of the form: list(hud user = number of times this hud was added to this user).
 	///that isnt separated by z level
-	var/list/mob/hud_users_all_z_levels = list()
+	var/list/mob/hud_users_all_z_levels = alist()
 
 	///these will be the indexes for the atom's hud_list
-	var/list/hud_icons = list()
+	var/list/hud_icons = alist()
 
 	///mobs associated with the next time this hud can be added to them
-	var/list/next_time_allowed = list()
+	var/list/next_time_allowed = alist()
 	///mobs that have triggered the cooldown and are queued to see the hud, but do not yet
-	var/list/queued_to_see = list()
+	var/list/queued_to_see = alist()
 	/// huduser = list(atoms with their hud hidden) - aka everyone hates targeted invisiblity
-	var/list/hud_exceptions = list()
+	var/list/hud_exceptions = alist()
 	///whether or not this atom_hud type updates the global huds_by_category list.
 	///some subtypes cant work like this since theyre supposed to "belong" to
 	///one target atom each. it will still go in the other global hud lists.

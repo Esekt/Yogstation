@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(guardian_frenzy_speedup, list(
+GLOBAL_LIST_INIT(guardian_frenzy_speedup, alist(
 	1 = -0.15,
 	2 = -0.35,
 	3 = -0.5,

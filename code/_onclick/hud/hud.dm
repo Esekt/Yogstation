@@ -160,7 +160,6 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/client/client = mymob.canon_client
 	var/new_byond_version = client.byond_version
 #if MIN_COMPILER_VERSION > 515
-	#warn Fully change default relay_loc to "1,1", rather than changing it based on client version
 #endif
 	if(!isnull(last_byond_version) && new_byond_version != last_byond_version)
 		var/new_relay_loc = (new_byond_version > 515) ? "1,1" : "CENTER"

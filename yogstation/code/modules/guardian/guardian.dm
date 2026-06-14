@@ -1,6 +1,6 @@
 
 GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
-GLOBAL_LIST_INIT(guardian_projectile_damage, list(
+GLOBAL_LIST_INIT(guardian_projectile_damage, alist(
 	1 = 2,    // F
 	2 = 4,    // D
 	3 = 6.5,  // C
